@@ -1,0 +1,49 @@
+/**
+ * 使用 ntnu logo 的 navbar
+ * 獨立一個檔案以方便日後複製至其他專案
+ */
+@mixin ntnuBrickRed {
+  background: #4d070b;
+}
+
+@mixin textColor {
+  color: #333333;
+}
+
+@mixin textBg {
+  background: #cfa972;
+}
+
+@mixin chosenBg {
+  background: #D67529;
+}
+
+.above-navbar {
+  //font-weight: bold;
+  //text-align: center;
+  @include ntnuBrickRed;
+}
+
+/* menu text style*/
+#navbar-collapse-div {
+  @include textBg;
+
+  li a {
+    @include textColor;
+  }
+}
+
+// 功能表
+.nav li {
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+
+  :hover {
+    border-bottom: 3px solid #338ecf;
+  }
+
+  .active {
+    color: #0d6efd !important;
+    border-bottom: 3px solid #338ecf;
+    background: #eee !important;
+  }
+}
