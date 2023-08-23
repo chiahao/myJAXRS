@@ -2,8 +2,10 @@
  * 使用 ntnu logo 的 navbar
  * 獨立一個檔案以方便日後複製至其他專案
  */
-@mixin ntnuBrickRed {
-  background: #4d070b;
+$ntnu_brick_red: #4d070b;
+
+@mixin ntnuBrickRedBg {
+  background-color: $ntnu_brick_red;
 }
 
 @mixin textColor {
@@ -18,10 +20,16 @@
   background: #D67529;
 }
 
-.above-navbar {
+nav{
   //font-weight: bold;
   //text-align: center;
-  @include ntnuBrickRed;
+  @include ntnuBrickRedBg;
+  color: white;
+}
+
+.navbar_right_border {
+  margin-right: 3px;
+  border-right: 1px solid white;
 }
 
 /* menu text style*/
