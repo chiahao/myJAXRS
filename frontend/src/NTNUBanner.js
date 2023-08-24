@@ -1,13 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import './personForm.scss';
 import logo_ntnu from './images/logo-ntnu.png';
 
 export default function NTNUBanner() {
     return (
         <>
-            <Navbar fluid data-bs-theme="dark">
-                <Container>
+            <Navbar data-bs-theme="dark">
+                <Container fluid>
                     <Navbar.Brand href="#home">
                         <img
                             alt="ntnu_logo"

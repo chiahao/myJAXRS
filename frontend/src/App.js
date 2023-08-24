@@ -1,27 +1,14 @@
-import './App.scss';
+import './scss/App.scss';
 import NTNUBanner from "./NTNUBanner";
+import Form from "./components/Form";
 
 function App() {
-  return (
-      <>
-        <NTNUBanner />
-        <div className="App">
-          <header className="App-header">
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-      </>
-  );
+    return (
+        <>
+            <NTNUBanner />
+            <Form />
+        </>
+    );
 }
 
 export default App;
