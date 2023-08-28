@@ -17,16 +17,22 @@ const SideNavbar = () => {
 
     return (
         <Box
-            // sx={{
-            //     "& .pro-sidebar-inner": {
-            //         background: `${colors.primary[400]} !important`
-            //     },
-            //     "& .pro-icon-wrapper": {
-            //         background: "transparent !important"
-            //     }
-            // }}
+            sx={{
+                height: '100%',
+                backgroundColor: `${colors.primary[400]}`,
+                "& .pro-sidebar-inner": {
+                    background: `${colors.primary[400]} !important`
+                },
+                "& .ps-menuitem-root:hover": {
+                    color: '#868dfb !important'
+                },
+                "& .pro-icon-wrapper": {
+                    background: "transparent !important"
+                }
+            }}
         >
-            <Sidebar>
+            <Sidebar backgroundColor={colors.primary[400]}>
+            {/*<Sidebar>*/}
                 <Menu>
                     <MenuItem
                         active={selected === '總覽'}
