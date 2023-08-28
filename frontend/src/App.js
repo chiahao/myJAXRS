@@ -1,6 +1,7 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider} from "@mui/material";
-// import NTNUBanner from "./NTNUBanner";
+import NTNUAppBar from "./scenes/global/NTNUAppBar";
+import "./scss/index.scss";
 // import Form from "./components/Form";
 import { Route, Routes } from "react-router-dom";
 import TopNavbar from "./scenes/global/TopNavbar";
@@ -18,6 +19,7 @@ function App() {
         <ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
+                <NTNUAppBar />
                 <div className="app">
                     <SideNavbar />
                     <main className="content">
