@@ -3,8 +3,8 @@ import { CssBaseline, ThemeProvider} from "@mui/material";
 // import NTNUBanner from "./NTNUBanner";
 // import Form from "./components/Form";
 import { Route, Routes } from "react-router-dom";
-import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
+import TopNavbar from "./scenes/global/TopNavbar";
+import SideNavbar from "./scenes/global/SideNavbar";
 import Dashboard from "./scenes/dashboard";
 // import Team from "./scenes/team";
 // import Form from "./scenes/Form";
@@ -19,9 +19,9 @@ function App() {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <div className="app">
-                    <Sidebar />
+                    <SideNavbar />
                     <main className="content">
-                        <Topbar />
+                        <TopNavbar />
                         <Routes>
                             <Route path="/" element={<Dashboard />} />
                             {/*<Route path="/team" element={<Team />} />*/}

@@ -6,7 +6,7 @@ export default function NTNUBanner() {
     return (
         <>
             <Navbar data-bs-theme="dark">
-                <Container fluid>
+                <Container fluid="sm">
                     <Navbar.Brand href="#home">
                         <img
                             alt="ntnu_logo"
