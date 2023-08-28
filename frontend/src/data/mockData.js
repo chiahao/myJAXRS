@@ -1,10 +1,16 @@
-export const mockDataTeam = [
+export const mockDataPeople= [
     {
-        id: 1,
-        name: "Jon Snow",
-        email: "jonsnow@gmail.com",
-        age: 35,
-        phone: "(665)121-5454",
-        access: "admin"
+        "id": 1,
+        "IDNO": "A123456789",
+        "NAME": "魏大宜",
+        "UNITN2": "教育學院教育研究所",
+        "STATUS": "P"
+    },
+    {
+        "id": 3,
+        "IDNO": "J123456789",
+        "NAME": "簡易新",
+        "UNITN2": "所",
+        "STATUS": "P"
     }
 ];

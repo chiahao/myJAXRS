@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import TopNavbar from "./scenes/global/TopNavbar";
 import SideNavbar from "./scenes/global/SideNavbar";
 import Dashboard from "./scenes/dashboard";
-// import Team from "./scenes/team";
+import People from "./scenes/people";
 // import Form from "./scenes/Form";
 // import FAQ from "./scenes/faq";
 
@@ -26,7 +26,7 @@ function App() {
                         <TopNavbar />
                         <Routes>
                             <Route path="/" element={<Dashboard />} />
-                            {/*<Route path="/team" element={<Team />} />*/}
+                            <Route path="/people" element={<People />} />
                             {/*<Route path="/form" element={<Form />} />*/}
                             {/*<Route path="/faq" element={<FAQ />} />*/}
                         </Routes>
