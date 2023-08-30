@@ -5,7 +5,8 @@ body,
 #root,
 .app,
 .content {
-  height: 100%;
+  /* 如果設定了會道致 app bar 讓 scrollbar 跑出來 */
+  //height: 100%;
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }

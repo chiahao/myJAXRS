@@ -18,11 +18,8 @@ const SideNavbar = () => {
     return (
         <Box
             sx={{
-                height: '100%',
+                // height: '100%',
                 backgroundColor: `${colors.primary[400]}`,
-                "& .pro-sidebar-inner": {
-                    background: `${colors.primary[400]} !important`
-                },
                 "& .ps-menuitem-root:hover": {
                     color: '#868dfb !important'
                 },
@@ -37,25 +34,23 @@ const SideNavbar = () => {
                     <MenuItem
                         active={selected === '總覽'}
                         icon={<Dashboard />}
-                        component={<Link to="/dashboard" />}
+                        component={<Link to="/" />}
                     >
                         <Typography>總覽</Typography>
                     </MenuItem>
                     <MenuItem
-                        active={selected === '總覽'}
+                        active={selected === '人員申請表'}
                         icon={<AddOutlined />}
                         component={<Link to="/apply" />}
                     >
                         <Typography>建立報到</Typography>
                     </MenuItem>
                     <MenuItem
-                        active={selected === '總覽'}
+                        active={selected === '人員申請表'}
                         icon={<Approval />}
                         component={<Link to="/people" />}
                     >
-                        <Typography>
-                            人員申請表
-                        </Typography>
+                        <Typography>人員申請表</Typography>
                     </MenuItem>
                 </Menu>
             </Sidebar>
