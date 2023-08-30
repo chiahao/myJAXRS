@@ -8,15 +8,51 @@
     <packaging>war</packaging>
 
     <name>myJAXRS</name>
+<!--    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+        <relativePath/>  lookup parent from repository 
+    </parent>-->
+
+<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.glassfish.jersey</groupId>
+			<artifactId>jersey-bom</artifactId>
+			<version>2.40</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
 
     <properties>
+        <java.version>1.8</java.version>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jersey2.version>2.40</jersey2.version>
+		<!--<jersey2.version>2.40</jersey2.version>-->
 		<jaxrs.version>2.1.1</jaxrs.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
     <dependencies>
+<!--        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
+<!--        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>-->
 <!--        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -37,22 +73,18 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
-			<version>${jersey2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>${jersey2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>${jersey2.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.inject</groupId>
 			<artifactId>jersey-hk2</artifactId>
-			<version>${jersey2.version}</version>
 		</dependency>
 <!--		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
@@ -68,18 +100,24 @@
 
     <build>
         <plugins>
+<!--            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>-->
+			
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
                 </configuration>
             </plugin>
+<!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -87,8 +125,8 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-            </plugin>
-            <plugin>
+            </plugin>-->
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.6</version>
@@ -112,7 +150,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -128,8 +166,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v8.9.4</nodeVersion>
-                            <npmVersion>5.6.0</npmVersion>
+							<nodeVersion>v20.5.0</nodeVersion>
+							<npmVersion>9.8.0</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -152,7 +190,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
@@ -160,7 +198,7 @@
                         <configuration>
                             <target>
                                 <copy todir="${project.build.directory}/classes/public">
-                                    <fileset dir="${project.basedir}/basic-frontend-app/build"/>
+                                    <fileset dir="${project.basedir}/frontend/build"/>
                                 </copy>
                             </target>
                         </configuration>
@@ -169,7 +207,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
