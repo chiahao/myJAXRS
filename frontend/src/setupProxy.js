@@ -4,8 +4,8 @@ module.exports = function (app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://localhost:8808',
+            target: 'http://localhost:8808/myJAXRS/',
             changeOrigin: true
         })
-    )
+    );
 }
