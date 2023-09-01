@@ -35,6 +35,7 @@
 		<jaxrs.version>2.1.1</jaxrs.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<frontend.folder.name>frontend</frontend.folder.name>
 	</properties>
     
 	<dependencies>
@@ -209,6 +210,31 @@
 					</execution>
 				</executions>
 			</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>copy-resource-one</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/${project.name}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${frontend.folder.name}/build</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
